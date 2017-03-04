@@ -45,8 +45,7 @@
       drupal:symlink:profiles, drupal:symlink:sites, drupal:symlink:themes, drupal:symlink:modules, drupal:symlink:features, drupal:symlink:files, drupal:symlink:private,
       drupal:compass:compile,
       drupal:overwrite,
-      drupal:chmod,
-      copy:zend:to:libraries:for:oauth"
+      drupal:chmod"
     description="Build the Drupal codebase" />
 
   <target name="drupal:revert"
