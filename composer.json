@@ -1,0 +1,28 @@
+{
+    "name": "elayyoub/bigwig",
+    "description": "Whywebs powered by mutasem elayyoub",
+    "require": {
+        "omnipay/tests": "^2.1",
+        "php": "^5.6",
+        "jalle19/php-whitelist-check": "^1.0",
+        "overtrue/phplint": "*",
+        "squizlabs/php_codesniffer": "2.*",
+        "drupal/coder" : "dev-8.x-2.x",
+         "phing/phing": "2.*"
+        {
+    },
+    "license": "whywebs",
+    "authors": [
+        {
+            "name": "Mutasem Elayyoub",
+            "email": "melayyoub@outlook.com"
+        }
+    ],
+    "scripts": {
+    "test": [
+      "../vendor/bin/phplint --no-cache",
+      "../vendor/bin/phpcs --config-set installed_paths ./../../drupal/coder/coder_sniffer",
+      "../vendor/bin/phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php,vendor/* --extensions=install,module,php,inc ./"
+    ]
+  }
+}
