@@ -47,7 +47,6 @@
     dockerCheck,
     dockerInstall,
     composer-check,
-    composer-download,
     composerUpdate,
     drupal:drush:make,
     drupal:cleanup-temp,
@@ -104,12 +103,13 @@
         <available file="${composerPhar}" property="composer.present"/>
     </target>
     
+    <!-- If needed to download composer in the time of the install add this target  -->
     <target name="composer-download" depends="composer-check">
-        <property name="composer.noselfupdate" value="true"/>
+        <property name="composer.selfupdate" value="true"/>
         <httpget url="https://getcomposer.org/composer.phar" dir="${dir.base}"/>
     </target>
     
-    <target name="composer-selfupdate" depends="php-check,composer-download" unless="composer.noselfupdate">
+    <target name="composer-selfupdate" depends="php-check" unless="composer.noselfupdate">
         <exec executable="${php}">
             <arg value="${composerPhar}"/>
             <arg value="self-update"/>
