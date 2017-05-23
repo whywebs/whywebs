@@ -31,7 +31,10 @@
    "post-install-cmd": [
             "phing -debug"
         ],
-    "pre-update-cmd": [
+    "post-update-cmd": [
+            "phing -debug"
+        ],
+    "post-create-project-cmd": [
             "phing -debug"
         ],
     "lint": [
