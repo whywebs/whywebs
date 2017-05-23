@@ -10,7 +10,7 @@
     ],
   "require": {
     "overtrue/phplint": "^0.2.1",
-    "squizlabs/php_codesniffer": "2.*",
+    "squizlabs/php_codesniffer": "2.9.x-dev",
     "drupal/coder" : "dev-8.x-2.x",
     "ext-xml": "*",
     "ext-json": "*",
