@@ -4,7 +4,7 @@ php:
   - "7.0"
 
 install:
-  - php composer.phar install
+  - composer install
 
 script:
-  - php composer.phar test
+  - composer test
