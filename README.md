@@ -2,7 +2,6 @@ To start with Mutasem Elayyoub (Sam) drupal version with Phing
 
 www.whywebs.com
 
-\\\\\\\\\\\\\\\\\\\\
 
 why to use WhyWebs Drupal Version
 
@@ -15,6 +14,12 @@ because :
 
 
 /////////first start building your dev env ////////////
+
+Use composer install 
+ $ php composer.phar install
+
+Let composer build your environment with all what you need.
+
 
 Install Autoconf
 This may not be necessary for all systems, but it will prevent later steps from failing
@@ -33,7 +38,8 @@ sudo pear config-set auto_discover 1
 
 Edit /etc/php.ini and find the line:
 ;include_path = ".:/php/includes"
-and change it to include_path = ".:/usr/lib/php/pear"
+and change it to
+include_path = ".:/usr/lib/php/pear"
 
 Install Optional Pear libraries
 pear config-set auto_discover 1

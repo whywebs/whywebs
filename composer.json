@@ -1,28 +1,45 @@
 {
-    "name": "elayyoub/bigwig",
-    "description": "Whywebs powered by mutasem elayyoub",
-    "require": {
-        "omnipay/tests": "^2.1",
-        "php": "^5.6",
-        "jalle19/php-whitelist-check": "^1.0",
-        "overtrue/phplint": "*",
-        "squizlabs/php_codesniffer": "2.*",
-        "drupal/coder" : "dev-8.x-2.x",
-         "phing/phing": "2.*"
-        {
-    },
-    "license": "whywebs",
+  "name": "elayyoub/whywebs",
+  "description": "Whywebs.com",
+  "license": "proprietary",
     "authors": [
         {
             "name": "Mutasem Elayyoub",
             "email": "melayyoub@outlook.com"
         }
     ],
-    "scripts": {
+  "require": {
+    "overtrue/phplint": "^0.2.1",
+    "squizlabs/php_codesniffer": "2.*",
+    "drupal/coder" : "dev-8.x-2.x",
+    "ext-xml": "*",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-curl": "*",
+    "drush/drush": "~8.0",
+    "phing/phing": "^2.16",
+    "psy/psysh": "^0.8.5",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "vendor-dir": "vendor",
+    "bin-dir": "vendor/bin"
+  },
+  "scripts": {
+    "post-install-cmd": [
+            "phing -debug"
+        ],
+    "lint": [
+      "./vendor/bin/phplint",
+      "./vendor/bin/phpcs --config-set installed_paths ./../../drupal/coder/coder_sniffer",
+      "./vendor/bin/phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php --extensions=install,module,php,inc"
+    ],
     "test": [
-      "../vendor/bin/phplint --no-cache",
-      "../vendor/bin/phpcs --config-set installed_paths ./../../drupal/coder/coder_sniffer",
-      "../vendor/bin/phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php,vendor/* --extensions=install,module,php,inc ./"
+      "./vendor/bin/phplint --no-cache",
+      "./vendor/bin/phpcs --config-set installed_paths ./../../drupal/coder/coder_sniffer",
+      "./vendor/bin/phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php --extensions=php,inc themes || true"
     ]
-  }
+  }  
 }
