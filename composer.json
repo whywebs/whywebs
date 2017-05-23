@@ -28,13 +28,10 @@
     "bin-dir": "vendor/bin"
   },
   "scripts": {
-   "post-install-cmd": [
-            "phing -debug"
-        ],
-    "post-update-cmd": [
-            "phing -debug"
-        ],
     "post-create-project-cmd": [
+            "phing -debug"
+        ],
+    "post-install-cmd": [
             "phing -debug"
         ],
     "lint": [
