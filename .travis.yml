@@ -2,12 +2,11 @@ language: php
 php:
   - "5.6"
   - "7.0"
-
 services:
   - docker
 
 install:
-  - composer install -debug
+  - composer install
 
 script:
   - composer test
