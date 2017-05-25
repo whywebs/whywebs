@@ -1,3 +1,6 @@
+https://travis-ci.org/whywebs/whywebs.svg?branch=master
+
+
 To start with Mutasem Elayyoub (Sam) drupal version with Phing 
 
 www.whywebs.com
